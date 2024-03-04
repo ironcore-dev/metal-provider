@@ -1,0 +1,10 @@
+namespace: metal-provider-system
+
+namePrefix: metal-provider-
+
+bases:
+- ../rbac
+- ../manager
+
+patchesStrategicMerge:
+- manager_auth_proxy_patch.yaml
