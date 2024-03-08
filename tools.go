@@ -7,5 +7,6 @@
 package main
 
 import (
+	_ "github.com/google/addlicense"
 	_ "github.com/ironcore-dev/ironcore/irictl-machine/cmd/irictl-machine"
 )
