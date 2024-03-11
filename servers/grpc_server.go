@@ -162,9 +162,9 @@ func (s *GRPCServer) ListMachines(ctx context.Context, req *irimachinev1alpha1.L
 			continue
 		}
 		var ignition []byte
-		ignition, ok = bootMap.BinaryData["ignition-customer"]
+		ignition, ok = bootMap.BinaryData["ignition-custom"]
 		if !ok {
-			_ = internalError(ctx, fmt.Errorf("reserved machine has no ignition-customer in boot configmap"))
+			_ = internalError(ctx, fmt.Errorf("reserved machine has no ignition-custom in boot configmap"))
 			continue
 		}
 
@@ -311,7 +311,7 @@ func (s *GRPCServer) CreateMachine(ctx context.Context, req *irimachinev1alpha1.
 		"image": image,
 	}
 	bootMapBinaryData := map[string][]byte{
-		"ignition-customer": reqSpec.GetIgnitionData(),
+		"ignition-custom": reqSpec.GetIgnitionData(),
 	}
 	bootMapApply := v1apply.ConfigMap(fmt.Sprintf("ipxe-%s", machine.Name), machine.Namespace).WithData(bootMapData).WithBinaryData(bootMapBinaryData)
 	bootMap := &v1.ConfigMap{
