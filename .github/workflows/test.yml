@@ -3,14 +3,17 @@ name: Test
 on: pull_request
 
 jobs:
-  checks:
+  test:
     name: Test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Check out repository
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-    - uses: actions/setup-go@v5
+    - name: Set up Go
+      uses: actions/setup-go@v5
       with:
         go-version-file: go.mod
-    - run: make test
+    - name: Run tests
+      run: make test
