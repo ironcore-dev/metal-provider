@@ -17,6 +17,7 @@ permissions:
 
 jobs:
   publish-docker:
+    name: Build and publish Docker image
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository
