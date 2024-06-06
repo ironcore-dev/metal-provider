@@ -1,0 +1,6 @@
+domain: ironcore.dev
+layout:
+- go.kubebuilder.io/v4
+projectName: metal-provider
+repo: github.com/ironcore-dev/metal-provider
+version: "3"

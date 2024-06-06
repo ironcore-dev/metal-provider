@@ -1,23 +1,24 @@
-name: Release Drafter
+name: Draft release
 
 on:
+  pull_request_target:
   push:
     branches:
     - main
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   release-drafter:
     name: Draft release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
     - name: Draft release
       uses: release-drafter/release-drafter@v6
       with:
         disable-releaser: github.ref != 'refs/heads/main'
         config-name: release-drafter.yml
+        commitish: main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

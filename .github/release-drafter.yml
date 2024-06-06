@@ -41,9 +41,15 @@ autolabeler:
   - '/fix\/.+/'
   title:
   - '/fix/i'
-- label: 'enhancement'
+- label: 'feature'
   branch:
   - '/feature\/.+/'
+- label: 'enhancement'
+  branch:
+  - '/enh\/.+/'
+- label: 'chore'
+  branch:
+  - '/chore\/.+/'
 template: |
   ## Changes
   $CHANGES

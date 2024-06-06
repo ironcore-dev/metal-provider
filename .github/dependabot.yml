@@ -1,13 +1,13 @@
 version: 2
 updates:
-#- package-ecosystem: gomod
-#  directory: "/"
-#  schedule:
-#    interval: daily
-#  commit-message:
-#    prefix: ""
-#  reviewers:
-#  - Gchbg
+- package-ecosystem: gomod
+  directory: "/"
+  schedule:
+    interval: daily
+  commit-message:
+    prefix: ""
+  reviewers:
+  - Gchbg
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
@@ -15,7 +15,7 @@ updates:
   commit-message:
     prefix: ""
   reviewers:
-    - Gchbg
+  - Gchbg
 - package-ecosystem: docker
   directory: "/"
   schedule:
@@ -23,4 +23,4 @@ updates:
   commit-message:
     prefix: ""
   reviewers:
-    - Gchbg
+  - Gchbg

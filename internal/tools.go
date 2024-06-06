@@ -4,9 +4,10 @@
 //go:build tools
 // +build tools
 
-package main
+package internal
 
 import (
+	_ "github.com/golangci/golangci-lint/cmd/golangci-lint"
 	_ "github.com/google/addlicense"
 	_ "github.com/ironcore-dev/ironcore/irictl-machine/cmd/irictl-machine"
 )

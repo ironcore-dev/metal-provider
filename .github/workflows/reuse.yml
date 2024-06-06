@@ -1,4 +1,4 @@
-name: REUSE Compliance Check
+name: Check REUSE compliance
 
 on: pull_request
 
