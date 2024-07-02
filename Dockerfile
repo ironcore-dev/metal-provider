@@ -12,7 +12,7 @@ COPY servers/ servers/
 COPY *.go ./
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=${GOARCH} go build -a -o metal-provider .
 
-FROM debian:bookworm-20240513-slim
+FROM debian:bookworm-20240701-slim
 
 WORKDIR /
 
